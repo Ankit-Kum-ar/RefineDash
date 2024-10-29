@@ -1,7 +1,6 @@
 import { Authenticated, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
-
 import {
   ErrorComponent,
   ThemedLayoutV2,
@@ -23,6 +22,7 @@ import { ForgotPassword } from "./pages/forgotPassword";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { Header } from "./components";
+import { resources } from "./config/resources";
 
 function App() {
   return (
@@ -37,28 +37,7 @@ function App() {
                 notificationProvider={useNotificationProvider}
                 routerProvider={routerBindings}
                 authProvider={authProvider}
-                resources={[
-                  {
-                    name: "blog_posts",
-                    list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
-                    meta: {
-                      canDelete: true,
-                    },
-                  },
-                  {
-                    name: "categories",
-                    list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
-                    meta: {
-                      canDelete: true,
-                    },
-                  },
-                ]}
+                resources={resources}
                 options={{
                   syncWithLocation: true,
                   warnWhenUnsavedChanges: true,
@@ -75,17 +54,6 @@ function App() {
                         fallback={<CatchAllNavigate to="/login" />}
                       >
                         <ThemedLayoutV2
-                          // Title Changes here using the Title prop.
-                          Title={() => ( 
-                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                              <img 
-                                src="/logo.png" 
-                                alt="DataVista Logo" 
-                                style={{ width: "30px", height: "30px" }} // Adjust logo size as needed
-                              />
-                              <span style={{ fontSize: "24px", fontWeight: "bold" }}>DataVista</span>
-                            </div>
-                          )}
                           Header={Header}
                           Sider={(props) => <ThemedSiderV2 {...props} fixed />}
                         >
@@ -94,7 +62,7 @@ function App() {
                       </Authenticated>
                     }
                   >
-                    <Route index element={<NavigateToResource resource="blog_posts" />} />
+                    {/* <Route index element={<NavigateToResource resource="blog_posts" />} /> */}
                     {/* <Route path="/blog-posts">
                       <Route index element={<BlogPostList />} />
                       <Route path="create" element={<BlogPostCreate />} />
@@ -131,7 +99,7 @@ function App() {
                 <UnsavedChangesNotifier />
                 <DocumentTitleHandler />
               </Refine>
-              <DevtoolsPanel />
+              {/* <DevtoolsPanel /> */}
             </DevtoolsProvider>
           </AntdApp>
       </RefineKbarProvider>
