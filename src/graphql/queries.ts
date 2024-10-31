@@ -18,11 +18,11 @@ export const DASHBOARD_TOTAL_COUNTS_QUERY = gql`
 // Query to get upcoming events
 export const DASHBOARD_CALENDAR_UPCOMING_EVENTS_QUERY = gql`
   query DashboardCalendarUpcomingEvents(
-    $filter: EventFilter!
-    $sorting: [EventSort!]
-    $paging: OffsetPaging!
+    $filter: EventFilter! # Filter for events
+    $sorting: [EventSort!] # Sorting for events
+    $paging: OffsetPaging! # Paging for events
   ) {
-    events(filter: $filter, sorting: $sorting, paging: $paging) {
+    events(filter: $filter, sorting: $sorting, paging: $paging) { # Get all events
       totalCount
       nodes {
         id
