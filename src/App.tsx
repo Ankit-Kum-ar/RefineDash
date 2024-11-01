@@ -20,7 +20,7 @@ import { App as AntdApp } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { Header } from "./components";
 import { resources } from "./config/resources";
-import { ForgotPassword, Home, Login, Register } from "./pages";
+import { CompanyList, ForgotPassword, Home, Login, Register } from "./pages";
 
 function App() {
   return (
@@ -61,6 +61,7 @@ function App() {
                     }
                   >
                     <Route index element={<Home />} />
+                    <Route path="/companies" element={<CompanyList/>}/>
                     {/* <Route index element={<NavigateToResource resource="blog_posts" />} /> */}
                     {/* <Route path="/blog-posts">
                       <Route index element={<BlogPostList />} />

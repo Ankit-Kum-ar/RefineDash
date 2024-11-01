@@ -92,15 +92,15 @@ export const DASHBOARD_LATEST_ACTIVITIES_DEALS_QUERY = gql`
 `;
 
 // Query to get latest activities audits
-export const DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY = gql`
+export const DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY = gql` 
   query DashboardLatestActivitiesAudits(
-    $filter: AuditFilter!
-    $sorting: [AuditSort!]
-    $paging: OffsetPaging
+    $filter: AuditFilter! # Filter for audits
+    $sorting: [AuditSort!] # Sorting for audits
+    $paging: OffsetPaging # Paging for audits
   ) {
-    audits(filter: $filter, sorting: $sorting, paging: $paging) {
-      totalCount
-      nodes {
+    audits(filter: $filter, sorting: $sorting, paging: $paging) { # Get all audits
+      totalCount # Get the total count of audits
+      nodes { # Get specific fields for each audit
         id
         action
         targetEntity
@@ -110,7 +110,7 @@ export const DASHBOARD_LATEST_ACTIVITIES_AUDITS_QUERY = gql`
           from
           to
         }
-        createdAt
+        createdAt# Get the creation date of the audit
         user {
           id
           name
