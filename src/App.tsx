@@ -21,6 +21,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { Header } from "./components";
 import { resources } from "./config/resources";
 import { CompanyList, ForgotPassword, Home, Login, Register } from "./pages";
+import Create from "./pages/company/create";
 
 function App() {
   return (
@@ -61,20 +62,11 @@ function App() {
                     }
                   >
                     <Route index element={<Home />} />
-                    <Route path="/companies" element={<CompanyList/>}/>
-                    {/* <Route index element={<NavigateToResource resource="blog_posts" />} /> */}
-                    {/* <Route path="/blog-posts">
-                      <Route index element={<BlogPostList />} />
-                      <Route path="create" element={<BlogPostCreate />} />
-                      <Route path="edit/:id" element={<BlogPostEdit />} />
-                      <Route path="show/:id" element={<BlogPostShow />} />
-                    </Route> */}
-                    {/* <Route path="/categories">
-                      <Route index element={<CategoryList />} />
-                      <Route path="create" element={<CategoryCreate />} />
-                      <Route path="edit/:id" element={<CategoryEdit />} />
-                      <Route path="show/:id" element={<CategoryShow />} />
-                    </Route> */}
+                    <Route path="/companies" >
+                      <Route index element={<CompanyList/>}/>
+                      <Route path="new" element={<Create/>}/>
+                    </Route>
+                    
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>
 

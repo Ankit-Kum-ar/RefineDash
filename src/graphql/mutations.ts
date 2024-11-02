@@ -20,9 +20,9 @@ export const UPDATE_USER_MUTATION = gql`
 // Mutation to create company
 export const CREATE_COMPANY_MUTATION = gql`
   mutation CreateCompany($input: CreateOneCompanyInput!) {
-    createOneCompany(input: $input) {
+    createOneCompany(input: $input) { # call the createOneCompany mutation with the input and pass the $input argument
       id
-      salesOwner {
+      salesOwner { # fetch the salesOwner field
         id
       }
     }
