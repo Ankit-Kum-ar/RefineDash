@@ -2,20 +2,6 @@
 
 RefineDash is an enterprise-level dashboard application built using **React**, **GraphQL**, **TypeScript**, **Ant Design**, and the **Refine-dev** framework. It provides an intuitive user interface with features like task management, company management, and a detailed overview of upcoming events, activities, and deals.
 
-## Table of Contents 📚
-
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Tech Stack](#tech-stack)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Authentication Flow](#authentication-flow)
-7. [Dashboard](#dashboard)
-8. [Companies](#companies)
-9. [Tasks](#tasks)
-10. [Refine-dev](#refine-dev)
-11. [Contributing](#contributing)
-
 ## Overview 🌟
 
 RefineDash provides a powerful set of tools for managing tasks, tracking company data, and visualizing business metrics. It includes:
