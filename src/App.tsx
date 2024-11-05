@@ -1,5 +1,5 @@
 import { Authenticated, Refine } from "@refinedev/core";
-import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
+import { DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import {
   ErrorComponent,
@@ -23,6 +23,9 @@ import { resources } from "./config/resources";
 import { CompanyList, ForgotPassword, Home, Login, Register } from "./pages";
 import Create from "./pages/company/create";
 import EditPage from "./pages/company/edit";
+import List from "./pages/tasks/list";
+import EditTask from "./pages/tasks/edit";
+import CreateTask from "./pages/tasks/create";
 
 function App() {
   return (
@@ -67,6 +70,12 @@ function App() {
                       <Route index element={<CompanyList/>}/>
                       <Route path="new" element={<Create/>}/>
                       <Route path="edit/:id" element={<EditPage/>}/>
+                    </Route>
+                    <Route path="/tasks" element={<List onDragEnd={() => console.log('')}>
+                      <Outlet />
+                    </List>} >
+                      <Route path="new" element={<CreateTask/>}/>
+                      <Route path="edit/:id" element={<EditTask/>}/>
                     </Route>
                     
                     <Route path="*" element={<ErrorComponent />} />
