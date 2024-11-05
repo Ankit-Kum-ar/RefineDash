@@ -53,7 +53,7 @@ Make sure you have **Node.js** (version 14 or higher) and **npm** or **yarn** in
 
 1. Clone the repository:
    ```bash
-    git clone https://github.com/your-username/refinedash.git
+    git clone https://github.com/Ankit-Kum-ar/refinedash.git
     cd refinedash
     ```
 
@@ -68,7 +68,7 @@ Make sure you have **Node.js** (version 14 or higher) and **npm** or **yarn** in
     ```
 
 4. **Open in your browser**: 
-    Navigate to `http://localhost:3000` to see the portfolio live.
+    Navigate to `http://localhost:5173/` to see the Dashboard.
 
 
 ## Usage 🖥️
@@ -79,7 +79,7 @@ Make sure you have **Node.js** (version 14 or higher) and **npm** or **yarn** in
 - **Tasks**: The user can manage tasks using a drag-and-drop interface, changing the task status by moving them between categories (Unassigned, Todo, In Progress, In Review, Done).
 - **Logout**: Click on the logout button to end the session.
 
-# Authentication Flow 🔑
+## Authentication Flow 🔑
 
 The authentication flow is the starting point of the application. It contains the following pages:
 
